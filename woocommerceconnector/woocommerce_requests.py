@@ -46,6 +46,7 @@ def get_request_request(path, settings=None, params=None):
         verify_ssl=settings["verify_ssl"],
         wp_api=True,
         version="wc/v3",
+        query_string_auth=True,
         timeout=1000,
     )
     r = wcapi.get(path, params=params)
@@ -78,6 +79,7 @@ def post_request(path, data):
         verify_ssl=settings["verify_ssl"],
         wp_api=True,
         version="wc/v3",
+        query_string_auth=True,
         timeout=1000,
     )
 
@@ -107,6 +109,7 @@ def put_request(path, data):
         verify_ssl=settings["verify_ssl"],
         wp_api=True,
         version="wc/v3",
+        query_string_auth=True,
         timeout=5000,
     )
     # frappe.log_error("{0} data: {1}".format(path, data))
@@ -137,6 +140,7 @@ def delete_request(path):
         verify_ssl=settings["verify_ssl"],
         wp_api=True,
         version="wc/v3",
+        query_string_auth=True,
         timeout=1000,
     )
     r = wcapi.post(path)
